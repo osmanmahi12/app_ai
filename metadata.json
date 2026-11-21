@@ -1,0 +1,6 @@
+{
+  "name": "DengueGuard AI",
+  "description": "AI-powered urban dengue outbreak intelligence platform for Bangladesh (Stage 1 frontend foundation with demo data).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
