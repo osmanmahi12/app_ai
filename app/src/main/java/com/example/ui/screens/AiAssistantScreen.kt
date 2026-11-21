@@ -80,12 +80,10 @@ fun AiAssistantScreen(
         horizontalArrangement = Arrangement.spacedBy(12.dp),
       ) {
         Image(
-          painter = painterResource(id = R.drawable.img_ai_avatar),
+          painter = painterResource(id = R.drawable.ic_ai_emblem),
           contentDescription = "DengueGuard AI Assistant avatar",
-          modifier = Modifier
-            .size(44.dp)
-            .clip(CircleShape),
-          contentScale = ContentScale.Crop,
+          modifier = Modifier.size(44.dp),
+          contentScale = ContentScale.Fit,
         )
         Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
           Row(

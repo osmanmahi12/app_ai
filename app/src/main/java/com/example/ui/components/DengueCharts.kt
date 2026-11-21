@@ -138,13 +138,22 @@ fun IncidenceLineChartCard(
 
                 val gridDash = PathEffect.dashPathEffect(floatArrayOf(8f, 8f))
                 val baseDash = PathEffect.dashPathEffect(floatArrayOf(10f, 8f))
-                val baseStroke = Stroke(width = 2.dp.toPx(), cap = StrokeCap.Round, pathEffect = baseDash)
-                val lineStroke = Stroke(width = 3.dp.toPx(), cap = StrokeCap.Round)
+                val gridStrokePx = 1.dp.toPx().roundToInt().coerceAtLeast(1).toFloat()
+                val selLineStrokePx = 1.dp.toPx().roundToInt().coerceAtLeast(1).toFloat()
                 val pointStroke = Stroke(width = 2.dp.toPx())
-                val gridStrokePx = 1.dp.toPx()
-                val selLineStrokePx = 1.5.dp.toPx()
                 val selRadiusPx = 5.dp.toPx()
                 val dotRadiusPx = 3.dp.toPx()
+                val lineStroke = Stroke(
+                  width = 3.dp.toPx(),
+                  cap = StrokeCap.Round,
+                  join = androidx.compose.ui.graphics.StrokeJoin.Round,
+                )
+                val baseStroke = Stroke(
+                  width = 2.dp.toPx(),
+                  cap = StrokeCap.Round,
+                  join = androidx.compose.ui.graphics.StrokeJoin.Round,
+                  pathEffect = baseDash,
+                )
 
                 val basePath = Path()
                 val linePath = Path()
@@ -183,7 +192,7 @@ fun IncidenceLineChartCard(
 
                 onDrawBehind {
                   for (step in 0..3) {
-                    val y = chartTop + chartHeight * (step / 3f)
+                    val y = (chartTop + chartHeight * (step / 3f)).roundToInt().toFloat()
                     drawLine(
                       color = SlateBorder.copy(alpha = 0.45f),
                       start = Offset(0f, y),

@@ -93,12 +93,10 @@ fun SidebarContent(
           horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
           Image(
-            painter = painterResource(id = R.drawable.img_dengueguard_icon),
+            painter = painterResource(id = R.drawable.ic_dengueguard_logo),
             contentDescription = "DengueGuard AI emblem",
-            modifier = Modifier
-              .size(40.dp)
-              .clip(RoundedCornerShape(10.dp)),
-            contentScale = ContentScale.Crop,
+            modifier = Modifier.size(40.dp),
+            contentScale = ContentScale.Fit,
           )
           Column {
             Text(
